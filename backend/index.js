@@ -22,9 +22,26 @@ connection.connect((err) => {
     "SELECT * FROM user AS u JOIN photo AS p ON p.user_id = u.id",
     function (err, result) {
         if (err) throw err;       
-        console.log(result);     
+        console.log(result);
     }); 
 });
+
+app.get('/',(req,res)=> {
+    try{
+        connection.query(
+            'SELECT u.username AS "photographe", p.title AS "photo" FROM user AS u JOIN photo AS p ON p.user_id = u.id; ',
+            function (err,result){
+                if(err) throw err;
+                console.log(result);
+                res.send(result)
+            }
+        )
+    }
+    catch(err){
+        console.log('Probleme endpoint photos',err);
+    }
+})
+
 
 app.get('/photos',(req,res)=>{
     try{
