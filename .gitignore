@@ -1,0 +1,5 @@
+OLD/
+.DS_Store
+Postgres/
+node_modules/
+vendor/
