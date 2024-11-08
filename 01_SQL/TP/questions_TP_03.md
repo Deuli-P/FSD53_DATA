@@ -79,17 +79,20 @@
 5. **Compter le nombre de photos par utilisateur**  
 
    ```sql
-  SELECT 
-   user_id ,
-   count(*) as 'nbr_photo'
-  FROM photo
-  GROUP BY user_id
-  ;
+   SELECT 
+      user_id ,
+      count(*) as 'nbr_photo'
+   FROM photo
+   GROUP BY user_id;
    ```
 
    RESULTAT : 
    ```
-
+   +---------+-----------+
+   | user_id | nbr_photo |
+   +---------+-----------+
+   |       1 |         4 |
+   +---------+-----------+
    ```
 
 6. **Sélectionner les commentaires pour une photo spécifique**  
