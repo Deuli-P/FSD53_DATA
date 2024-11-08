@@ -187,7 +187,8 @@
       p.title as 'title_photo'
    FROM user AS u
    JOIN photo as p
-   ON p.user_id = u.id; 
+   ON p.user_id = u.id;
+   WHERE p.status = 'active';
    ```
 
    RESULTAT : 
