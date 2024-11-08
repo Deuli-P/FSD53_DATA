@@ -26,3 +26,27 @@ connection.connect((err) => {
     }); 
 });
 
+app.get('/photos',(req,res)=>{
+    try{
+        const limit = parseInt(req.query.limit) || 2;
+        const offset = parseInt(req.query.offset)|| 0;
+        connection.query(
+            'SELECT * FROM photo LIMIT ? OFFSET ? ;',
+            [limit , offset],
+            function (err,result){
+                if(err) throw err;
+                console.log(result);
+                res.send(result)
+            }
+        )
+    }
+
+    catch(err){
+        console.log('Probleme endpoint photos',err);
+    }
+})
+
+app.listen(port, ()=>{
+    console.log('test');
+});
+
