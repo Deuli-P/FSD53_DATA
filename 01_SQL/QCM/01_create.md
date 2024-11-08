@@ -3,7 +3,7 @@
 **1. Quel moteur de stockage MySQL est principalement utilisé pour la gestion des données lorsqu'on de la sécurité sur l'intégrité des données ?**  
 (Choisissez une ou plusieurs réponses)  
 - [ ] MyISAM  
-- [ ] InnoDB  
+- [x] InnoDB  
 - [ ] Memory  
 - [ ] NDB  
 
